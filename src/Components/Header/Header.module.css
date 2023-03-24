@@ -1,0 +1,27 @@
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+  }
+
+  header h1{
+    color: #137c0f;
+    margin: 2rem;
+  }
+  header .logo{
+    height: 104px;
+      border-radius: 0 0 0 2rem;
+      overflow: hidden;
+      box-shadow: -16px 0 150px 4px #FFF;
+  }
+
+  header img{
+    object-fit: cover;
+        width: 113px;
+        height: 104px;
+  }
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
