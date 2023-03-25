@@ -7,7 +7,7 @@ function Header() {
   return (
     <header>
       <Link to="/">
-        <h1>HRnet</h1>
+        <h1>Wealth Health</h1>
       </Link>
       <div className={styles.logo}>
         <img src={logo} alt="logo" />

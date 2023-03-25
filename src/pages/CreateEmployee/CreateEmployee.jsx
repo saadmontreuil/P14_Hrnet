@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import CustomDatePicker from '../../Components/CustomDatePicker/CustomDatePicker';
+import CustomDropdown from '../../Components/CustomDropdown/CustomDropdown';
 import Header from '../../Components/Header/Header';
+import states from '../../data/states';
+
+const departments = [
+  { value: 'engineering', label: 'Engineering' },
+  { value: 'sales', label: 'Sales' },
+  { value: 'marketing', label: 'Marketing' },
+];
 
 export default function CreateEmployee() {
   const [birthDate, setBirthDate] = useState(null);
   const [startDate, setStartDate] = useState(null);
+  const [department, setDepartment] = useState(null);
+  const [state, setState] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,9 +25,7 @@ export default function CreateEmployee() {
     const lastName = formData.get('lastname');
     const street = formData.get('street');
     const city = formData.get('city');
-    const state = formData.get('state');
     const zipCode = formData.get('zip-code');
-    const department = formData.get('department');
 
     const employee = {
       firstName,
@@ -97,6 +105,12 @@ export default function CreateEmployee() {
           </section>
           <section className="state">
             <label htmlFor="state">State</label>
+            <CustomDropdown
+              options={states}
+              value={state}
+              onChange={setState}
+              placeholder="Select state..."
+            />
           </section>
           <section className="zip-code">
             <label htmlFor="zip-code">Zip Code</label>
@@ -110,9 +124,14 @@ export default function CreateEmployee() {
         </fieldset>
 
         <section className="department">
-          <label htmlFor="deparment">Department</label>
+          <label htmlFor="department">Department</label>
+          <CustomDropdown
+            options={departments}
+            value={department}
+            onChange={setDepartment}
+            placeholder="Select department..."
+          />
         </section>
-
         <button type="submit" className="save-button">Save</button>
       </form>
 
