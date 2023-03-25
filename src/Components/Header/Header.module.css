@@ -2,11 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    /* width: 100vw; */
   }
 
   header h1{
-    color: #5A6F07;
+    color: #556904;
     margin: 2rem;
   }
   header .logo{

@@ -1,0 +1,77 @@
+main{
+  margin: 0 10%
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .to-employees {
+    font-size: 1.2rem;
+    color: #556904;
+    text-decoration: none;
+    border-bottom: 2px solid #556904;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .to-employees:hover {
+    color: white;
+    background-color: #556904;
+    border-bottom: 2px solid white;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  input,
+  select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #f5f5f5;
+  }
+  
+  button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #556904;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: #556904;
+    border: 2px solid #556904;
+  }
+  
+  .save-button {
+    align-self: flex-end;
+  }

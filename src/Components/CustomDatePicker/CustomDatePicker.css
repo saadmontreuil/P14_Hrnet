@@ -1,0 +1,117 @@
+.react-datepicker {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #556904;
+    color: white;
+  }
+  
+  .react-datepicker__triangle {
+    border-bottom-color: #556904 !important;
+  }
+  
+  .react-datepicker__day--today {
+    font-weight: bold;
+  }
+  
+  .react-datepicker__header {
+    background-color: #556904;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    padding-top: 0.8rem;
+    position: relative;
+  }
+  
+  .react-datepicker__header--custom {
+    padding-bottom: 0.4rem;
+  }
+  
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    margin-top: 0;
+    color: white;
+  }
+  
+  .react-datepicker__day-names,
+  .react-datepicker__week {
+    white-space: nowrap;
+  }
+  
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    width: 2rem;
+    line-height: 2rem;
+    margin: 0.166rem;
+    text-align: center;
+    border-radius: 0.25rem;
+  }
+  
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__day--selected,
+  .react-datepicker__time-list-item--selected {
+    background-color: white;
+    color: #556904;
+  }
+  
+  .react-datepicker__day:hover,
+  .react-datepicker__month-text:hover,
+  .react-datepicker__quarter-text:hover,
+  .react-datepicker__year-text:hover {
+    background-color: #fff;
+    color: #556904;
+  }
+  
+  .react-datepicker__month-container {
+    float: left;
+  }
+  
+  .react-datepicker__month {
+    margin: 0.4rem;
+    text-align: center;
+  }
+  
+  .react-datepicker__input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .react-datepicker__input-container > input {
+    background-color: #556904;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  .react-datepicker__input-container > input::placeholder {
+    color: white;
+  }
+  
+  .react-datepicker__close-icon {
+    cursor: pointer;
+    background-color: #556904;
+    color: white;
+    border-radius: 50%;
+    padding: 0.166rem 0.166rem 0.166rem 0.166rem;
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .react-datepicker__close-icon:hover{
+    background-color: #556904;
+  }
+  
+  .react-datepicker__close-icon::after {
+    content: '×';
+    font-size: 0.75rem;
+    line-height: 1.1;
+    background-color: #556904;
+  }

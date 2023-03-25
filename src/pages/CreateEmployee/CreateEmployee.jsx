@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-
 import { Link } from 'react-router-dom';
+import styles from './CreateEmployee.module.css';
 import CustomDatePicker from '../../Components/CustomDatePicker/CustomDatePicker';
 import CustomDropdown from '../../Components/CustomDropdown/CustomDropdown';
-import Header from '../../Components/Header/Header';
+import Modal from '../../Components/Modal/Modal';
 import states from '../../data/states';
 
 const departments = [
@@ -18,8 +18,12 @@ export default function CreateEmployee() {
   const [department, setDepartment] = useState(null);
   const [state, setState] = useState(null);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsModalOpen(true);
+
     const formData = new FormData(event.target);
     const firstName = formData.get('firstname');
     const lastName = formData.get('lastname');
@@ -46,14 +50,13 @@ export default function CreateEmployee() {
     localStorage.setItem('employees', JSON.stringify(employees));
   };
   return (
-    <main className="create-employee">
-      <Header />
-      <div className="header">
+    <main className={styles['create-employee']}>
+      <div className={styles.header}>
         <h2>Create Employee</h2>
-        <Link to="/employees" className="to-employees">View Current Employees</Link>
+        <Link to="/employees" className={styles['to-employees']}>View Current Employees</Link>
       </div>
       <form onSubmit={handleSubmit}>
-        <section className="firstname">
+        <section className={styles.firstname}>
           <label htmlFor="firstname">First Name</label>
           <input
             type="text"
@@ -63,7 +66,7 @@ export default function CreateEmployee() {
           />
         </section>
 
-        <section className="lastname">
+        <section className={styles.lastname}>
           <label htmlFor="lastname">Last Name</label>
           <input
             type="text"
@@ -73,19 +76,19 @@ export default function CreateEmployee() {
           />
         </section>
 
-        <section className="birth">
+        <section className={styles.birth}>
           <label htmlFor="birth">Date of Birth</label>
           <CustomDatePicker setDate={setBirthDate} />
         </section>
 
-        <section className="start">
+        <section className={styles.start}>
           <label htmlFor="start">Start Date</label>
           <CustomDatePicker setDate={setStartDate} />
         </section>
 
         <fieldset>
           <legend>Address</legend>
-          <section className="street">
+          <section className={styles.street}>
             <label htmlFor="street">Street</label>
             <input
               type="text"
@@ -94,7 +97,7 @@ export default function CreateEmployee() {
               required
             />
           </section>
-          <section className="city">
+          <section className={styles.city}>
             <label htmlFor="city">City</label>
             <input
               type="text"
@@ -103,7 +106,7 @@ export default function CreateEmployee() {
               required
             />
           </section>
-          <section className="state">
+          <section className={styles.state}>
             <label htmlFor="state">State</label>
             <CustomDropdown
               options={states}
@@ -112,7 +115,7 @@ export default function CreateEmployee() {
               placeholder="Select state..."
             />
           </section>
-          <section className="zip-code">
+          <section className={styles['zip-code']}>
             <label htmlFor="zip-code">Zip Code</label>
             <input
               type="number"
@@ -123,7 +126,7 @@ export default function CreateEmployee() {
           </section>
         </fieldset>
 
-        <section className="department">
+        <section className={styles.department}>
           <label htmlFor="department">Department</label>
           <CustomDropdown
             options={departments}
@@ -132,8 +135,13 @@ export default function CreateEmployee() {
             placeholder="Select department..."
           />
         </section>
-        <button type="submit" className="save-button">Save</button>
+        <button type="submit" className={styles['save-button']}>Save</button>
       </form>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
 
     </main>
   );
