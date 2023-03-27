@@ -141,6 +141,9 @@ export default function CreateEmployee() {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        title="Confirmation"
+        message="Employee has been added successfully."
+        buttonText="OK"
       />
 
     </main>
