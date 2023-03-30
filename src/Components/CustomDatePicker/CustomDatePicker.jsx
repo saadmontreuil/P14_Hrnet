@@ -15,7 +15,7 @@ function CustomDatePicker({ setDate }) {
     <DatePicker
       selected={selectedDate}
       onChange={handleDateChange}
-      dateFormat="dd/MM/yyyy"
+      dateFormat="MM/dd/yyyy"
       closeOnScroll
       showWeekNumbers
       isClearable

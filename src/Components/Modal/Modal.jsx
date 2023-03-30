@@ -8,17 +8,17 @@ function Modal({
     <div className={`${styles.modal} ${isOpen ? styles.open : ''}`}>
       <div className={styles['modal-content']}>
         <div className={styles['modal-header']}>
-          <h2>{title}Confirmation</h2>
+          <h2>{title}</h2>
           <button type="button" className={styles['close-button']} onClick={onClose}>
             X
           </button>
         </div>
         <div className={styles['modal-body']}>
-          <p>{message}Employee has been added successfully.</p>
+          <p>{message}</p>
         </div>
         <div className={styles['modal-footer']}>
           <button type="button" className={styles['confirm-button']} onClick={onClose}>
-            {buttonText}OK
+            {buttonText}
           </button>
         </div>
       </div>
