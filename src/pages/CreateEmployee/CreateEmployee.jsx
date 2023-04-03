@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { EmployeeContext } from '../../hook/EmployeeContext';
 import styles from './CreateEmployee.module.css';
 import CustomDatePicker from '../../Components/CustomDatePicker/CustomDatePicker';
 import CustomDropdown from '../../Components/CustomDropdown/CustomDropdown';
@@ -29,6 +30,8 @@ export default function CreateEmployee() {
   const [departmentError, setDepartmentError] = useState('');
   const [birthDateError, setBirthDateError] = useState('');
   const [startDateError, setStartDateError] = useState('');
+
+  const { employees, addEmployee } = useContext(EmployeeContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -126,9 +129,11 @@ export default function CreateEmployee() {
       department,
     };
 
-    const employees = JSON.parse(localStorage.getItem('employees')) || [];
-    employees.push(employee);
-    localStorage.setItem('employees', JSON.stringify(employees));
+    // const employees = JSON.parse(localStorage.getItem('employees')) || [];
+    // employees.push(employee);
+    // localStorage.setItem('employees', JSON.stringify(employees));
+    addEmployee(employee);
+    console.log(employees);
   };
   return (
     <main className={styles['create-employee']}>

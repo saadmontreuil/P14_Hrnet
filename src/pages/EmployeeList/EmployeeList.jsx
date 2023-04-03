@@ -1,9 +1,10 @@
-import React, { useMemo } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import React, { useMemo, useContext } from 'react';
 import MaterialReactTable from 'material-react-table';
+import { EmployeeContext } from '../../hook/EmployeeContext';
 
 export default function EmployeeList() {
-  const data = JSON.parse(localStorage.getItem('employees'));
+  // const data = JSON.parse(localStorage.getItem('employees'));
+  const { employees } = useContext(EmployeeContext);
 
   const columns = useMemo(
     () => [
@@ -49,8 +50,8 @@ export default function EmployeeList() {
 
   return (
     <>
-      <div>EmployeeList</div>
-      <MaterialReactTable data={data} columns={columns} />
+      <h2>Employee List</h2>
+      <MaterialReactTable data={employees} columns={columns} />
     </>
   );
 }
