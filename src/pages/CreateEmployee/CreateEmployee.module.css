@@ -75,3 +75,8 @@ main{
   .save-button {
     align-self: flex-end;
   }
+  .error {
+    font-size: 14px;
+    color: #e53e3e;
+    margin-top: 5px;
+  }

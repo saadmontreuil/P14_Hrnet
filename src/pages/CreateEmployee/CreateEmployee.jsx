@@ -45,35 +45,37 @@ export default function CreateEmployee() {
     const zipCode = formData.get('zip-code');
 
     let formIsValid = true;
+    const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+    const streetRegex = /^[a-zA-Z0-9\s,'-]*$/;
+    const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
 
-    if (!firstName) {
-      setFirstNameError('Please enter your first name.');
+    if (!firstName || !nameRegex.test(firstName)) {
+      setFirstNameError('Please enter a valid first name.');
       formIsValid = false;
     } else {
       setFirstNameError('');
     }
-
-    if (!lastName) {
-      setLastNameError('Please enter your last name.');
+    if (!lastName || !nameRegex.test(lastName)) {
+      setLastNameError('Please enter a valid last name.');
       formIsValid = false;
     } else {
       setLastNameError('');
     }
-    if (!birthDate) {
-      setBirthDateError('Please select a birth date.');
+    if (!birthDate || !dateRegex.test(birthDate)) {
+      setBirthDateError('Please enter a valid birth date in the format MM/dd/yyyy.');
       formIsValid = false;
     } else {
       setBirthDateError('');
     }
 
-    if (!startDate) {
-      setStartDateError('Please select a start date.');
+    if (!startDate || !dateRegex.test(startDate)) {
+      setStartDateError('Please enter a valid start date in the format MM/dd/yyyy.');
       formIsValid = false;
     } else {
       setStartDateError('');
     }
 
-    if (!street) {
+    if (!street || !streetRegex.test(street)) {
       setStreetError('Please enter your street address.');
       formIsValid = false;
     } else {
@@ -87,8 +89,8 @@ export default function CreateEmployee() {
       setCityError('');
     }
 
-    if (!zipCode && /^\d{5}$/.test(zipCode)) {
-      setZipCodeError('Please enter your zip code.');
+    if (!zipCode || !/^\d{5}$/.test(zipCode)) {
+      setZipCodeError('Please enter a valid 5-digit zip code.');
       formIsValid = false;
     } else {
       setZipCodeError('');
@@ -129,9 +131,6 @@ export default function CreateEmployee() {
       department,
     };
 
-    // const employees = JSON.parse(localStorage.getItem('employees')) || [];
-    // employees.push(employee);
-    // localStorage.setItem('employees', JSON.stringify(employees));
     addEmployee(employee);
     console.log(employees);
   };
