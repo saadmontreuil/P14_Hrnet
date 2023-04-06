@@ -6,6 +6,7 @@ import CreateEmployee from './pages/CreateEmployee/CreateEmployee';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import EmployeeList from './pages/EmployeeList/EmployeeList';
+import Error404Page from './pages/Error/Error404Page';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CreateEmployee />} />
           <Route path="/employees" element={<EmployeeList />} />
+          <Route path="*" element={<Error404Page />} />
         </Routes>
         <Footer />
       </div>

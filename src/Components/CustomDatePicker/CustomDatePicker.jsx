@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import PropTypes from 'prop-types';
 import 'react-datepicker/dist/react-datepicker.css';
 import './CustomDatePicker.css';
 
 function CustomDatePicker({ setDate }) {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -22,9 +23,14 @@ function CustomDatePicker({ setDate }) {
       clearButtonClassName="react-datepicker__close-icon"
       maxDate={new Date()}
       className="react-datepicker"
+      placeholderText="Select a date"
       required
     />
   );
 }
 
 export default CustomDatePicker;
+
+CustomDatePicker.propTypes = {
+  setDate: PropTypes.func.isRequired,
+};
