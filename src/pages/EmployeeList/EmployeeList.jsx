@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import MaterialReactTable from 'material-react-table';
-import { EmployeeContext } from '../../hook/EmployeeContext';
+import { useSelector } from 'react-redux';
 
 export default function EmployeeList() {
-  const { employees } = useContext(EmployeeContext);
+  const employees = useSelector((state) => state.employee.employees);
 
   const columns = [
     {

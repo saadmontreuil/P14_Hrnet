@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { EmployeeContext } from '../../hook/EmployeeContext';
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../../service/redux/employeeSlice';
 import styles from './CreateEmployee.module.css';
 import CustomDatePicker from '../../Components/CustomDatePicker/CustomDatePicker';
 import CustomDropdown from '../../Components/CustomDropdown/CustomDropdown';
@@ -14,6 +15,8 @@ const departments = [
 ];
 
 export default function CreateEmployee() {
+  const dispatch = useDispatch();
+
   const [birthDate, setBirthDate] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [department, setDepartment] = useState(null);
@@ -30,8 +33,6 @@ export default function CreateEmployee() {
   const [departmentError, setDepartmentError] = useState('');
   const [birthDateError, setBirthDateError] = useState('');
   const [startDateError, setStartDateError] = useState('');
-
-  const { employees, addEmployee } = useContext(EmployeeContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -131,8 +132,9 @@ export default function CreateEmployee() {
       department,
     };
 
-    addEmployee(employee);
-    console.log(employees);
+    // addEmployee(employee);
+    // console.log(employees);
+    dispatch(addEmployee(employee));
   };
   return (
     <main className={styles['create-employee']}>
