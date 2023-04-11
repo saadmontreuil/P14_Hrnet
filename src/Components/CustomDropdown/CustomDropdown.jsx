@@ -1,6 +1,6 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Select from 'react-select';
+import PropTypes from 'prop-types';
 
 const customStyles = {
   control: (provided, state) => ({
@@ -36,3 +36,16 @@ function CustomDropdown({
 }
 
 export default CustomDropdown;
+
+CustomDropdown.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })).isRequired,
+  value: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+};

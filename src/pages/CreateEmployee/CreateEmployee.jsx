@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Modal } from 'sbm-modal';
+import 'sbm-modal/dist/index.css';
 import { addEmployee } from '../../service/redux/employeeSlice';
 import styles from './CreateEmployee.module.css';
 import CustomDatePicker from '../../Components/CustomDatePicker/CustomDatePicker';
 import CustomDropdown from '../../Components/CustomDropdown/CustomDropdown';
-import Modal from '../../Components/Modal/Modal';
+// import Modal from '../../Components/Modal/Modal';
 import states from '../../data/states';
 
 const departments = [
@@ -135,6 +137,7 @@ export default function CreateEmployee() {
     // addEmployee(employee);
     // console.log(employees);
     dispatch(addEmployee(employee));
+    event.target.reset();
   };
   return (
     <main className={styles['create-employee']}>
