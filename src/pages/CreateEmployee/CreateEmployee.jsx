@@ -23,7 +23,6 @@ export default function CreateEmployee() {
   const [startDate, setStartDate] = useState(null);
   const [department, setDepartment] = useState(null);
   const [state, setState] = useState(null);
-  const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [firstNameError, setFirstNameError] = useState('');
@@ -38,7 +37,6 @@ export default function CreateEmployee() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(error);
 
     const formData = new FormData(event.target);
     const firstName = formData.get('firstname');
@@ -118,7 +116,6 @@ export default function CreateEmployee() {
     }
 
     setIsModalOpen(true);
-    setError(null);
 
     const employee = {
       firstName,
@@ -138,6 +135,7 @@ export default function CreateEmployee() {
     // console.log(employees);
     dispatch(addEmployee(employee));
     event.target.reset();
+    // console.log('test');
   };
   return (
     <main className={styles['create-employee']}>

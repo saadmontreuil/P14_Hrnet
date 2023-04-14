@@ -23,7 +23,8 @@ module.exports = {
     },
     ],
     'react/prop-types': 'warn',
-    'react/jsx-props-no-spreading': 'off',
+    // 'react/jsx-props-no-spreading': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'import/extensions': 'off',
     'jsx-a11y/label-has-associated-control': ['error', {
