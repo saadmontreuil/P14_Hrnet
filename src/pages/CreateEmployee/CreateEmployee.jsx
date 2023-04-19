@@ -7,7 +7,6 @@ import { addEmployee } from '../../service/redux/employeeSlice';
 import styles from './CreateEmployee.module.css';
 import CustomDatePicker from '../../Components/CustomDatePicker/CustomDatePicker';
 import CustomDropdown from '../../Components/CustomDropdown/CustomDropdown';
-// import Modal from '../../Components/Modal/Modal';
 import states from '../../data/states';
 
 const departments = [
@@ -132,10 +131,8 @@ export default function CreateEmployee() {
     };
 
     // addEmployee(employee);
-    // console.log(employees);
     dispatch(addEmployee(employee));
     event.target.reset();
-    // console.log('test');
   };
   return (
     <main className={styles['create-employee']}>
