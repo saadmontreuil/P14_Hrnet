@@ -24,7 +24,6 @@ function CustomDatePicker({ setDate }) {
       maxDate={new Date()}
       className="react-datepicker"
       placeholderText="Select a date"
-      required
     />
   );
 }

@@ -147,7 +147,6 @@ export default function CreateEmployee() {
             type="text"
             name="firstname"
             id="firstname"
-            required
           />
           <p className={styles.error}>{firstNameError}</p>
         </section>
@@ -158,7 +157,6 @@ export default function CreateEmployee() {
             type="text"
             name="lastname"
             id="lastname"
-            required
           />
           <p className={styles.error}>{lastNameError}</p>
         </section>
@@ -184,7 +182,6 @@ export default function CreateEmployee() {
               type="text"
               name="street"
               id="street"
-              required
             />
             <p className={styles.error}>{streetError}</p>
           </section>
@@ -194,7 +191,6 @@ export default function CreateEmployee() {
               type="text"
               name="city"
               id="city"
-              required
             />
             <p className={styles.error}>{cityError}</p>
           </section>
@@ -214,7 +210,6 @@ export default function CreateEmployee() {
               type="number"
               name="zip-code"
               id="zip-code"
-              required
             />
             <p className={styles.error}>{zipCodeError}</p>
           </section>
